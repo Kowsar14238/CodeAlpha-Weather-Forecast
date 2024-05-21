@@ -24,43 +24,44 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- JS Link -->
     <script src="./JS/script.js" defer></script>
+    <script src="./JS/getForecast.js"></script>
   </head>
 
-  <body>
-    <section class="m-2 flex flex-col justify-center items-center">
-      <h1 class="text-3xl font-bold underline">Weather Dashboard</h1>
+  <body class="bg-slate-50  m-0 p-0">
+    <section class="flex flex-col justify-center items-center mx-2">
+      <h1 class="text-3xl font-bold underline py-3">Weather Dashboard</h1>
 
       <div class="container">
-        <div class="weather-input flex flex-col">
-          <h3>Enter a City Name</h3>
 
-          <div class="flex flex-row items-center">
+        <div class="weather-input flex flex-col justify-center items-center gap-2">
+          
+          <div class="flex flex-row justify-center items-center gap-2">
             <input
               type="text"
-              placeholder="E.g., New York, London, Tokyo"
+              placeholder="Enter a City Name"
               class="city-input input input-bordered input-success w-full max-w-xs"
             />
 
-            <button
-              class="search-btn btn bg-blue-600 text-white sm:btn-sm md:btn-md lg:btn-lg"
+            <button onclick="getCityCoordinates(event)"
+              class="btn btn-info text-white sm:btn-sm md:btn-md lg:btn-lg"
             > <span class="material-symbols-outlined"> search </span>Search</button>
           </div>
           <br />
 
-          <button class="btn bg-green-600 text-white btn-wide">
+          <button class="btn btn-success text-white btn-wide">
             <span class="material-symbols-outlined"> location_on </span>
             Current Location
           </button>
         </div>
 
-        <div class="weather-data">
+        <div class="weather-data flex flex-col justify-center items-center mt-5">
           <div class="current-weather">
             <div class="details">
               <h2>London (2024-05-16)</h2>
               <h4>Temperature: 35.25 °C</h4>
               <h4>Humidity: 45%</h4>
             </div>
-            <div class="icon">
+            <div class="icon flex flex-col ">
               <img
                 src="https://openweathermap.org/img/wn/10d@4x.png"
                 alt="weather-icon"
@@ -70,9 +71,9 @@
           </div>
         </div>
 
-        <div class="days-forcast">
+        <div class="days-forcast flex flex-col justify-center items-center ">
           <h2>5-Day Forecast</h2>
-          <ul class="weather-cards">
+          <ul class="weather-cards flex flex-wrap justify-center items-center gap-8">
             <li class="card">
               <h3>(2024-05-16)</h3>
               <img
